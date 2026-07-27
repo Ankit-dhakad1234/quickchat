@@ -54,7 +54,7 @@ export const ChatProvider = ({ children }) => {
     }
   };
 
-  // Function to subscribe to messages for selected user
+  // Function to subscribe to messages for selected user- socket.io event listener
   const subscribeToMessages = () => {
     if (!socket) return;
 
