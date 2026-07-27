@@ -10,7 +10,7 @@ const LoginPage = () => {
   const [bio, setBio] = useState("");
   const [isDataSubmitted, setIsDataSubmitted] = useState(false);
 
-  const { login } = useContext(AuthContext);
+  const { login, loading } = useContext(AuthContext);
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -95,9 +95,16 @@ const LoginPage = () => {
 
         <button
           type="submit"
-          className="py-3 bg-gradient-to-r from-purple-400 to-violet-600 text-white rounded-md cursor-pointer"
+          disabled={loading}
+          className="py-3 bg-gradient-to-r from-purple-400 to-violet-600 text-white rounded-md cursor-pointer disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {currState === "Sign up" ? "Create Account" : "Login Now"}
+          {loading
+            ? currState === "Sign up"
+              ? "Creating..."
+              : "Logging in..."
+            : currState === "Sign up"
+            ? "Create Account"
+            : "Login Now"}
         </button>
 
         <div className="flex items-center gap-2 text-sm text-gray-400">

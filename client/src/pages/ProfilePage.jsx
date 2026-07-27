@@ -4,7 +4,7 @@ import { assets } from "../assets/assets.js";
 import { AuthContext } from "../context/AuthContext.jsx";
 
 const ProfilePage = () => {
-  const { authUser, updateProfile } = useContext(AuthContext);
+  const { authUser, updateProfile, loading } = useContext(AuthContext);
 
   const [selectedImg, setSelectedImg] = useState(null);
   const navigate = useNavigate();
@@ -78,9 +78,10 @@ const ProfilePage = () => {
 
           <button
             type="submit"
-            className="bg-gradient-to-r from-purple-400 to-violet-600 text-white p-2 rounded-full text-lg cursor-pointer"
+            disabled={loading}
+            className="bg-gradient-to-r from-purple-400 to-violet-600 text-white p-2 rounded-full text-lg cursor-pointer disabled:cursor-not-allowed disabled:opacity-60"
           >
-            Save
+            {loading ? "Saving..." : "Save"}
           </button>
         </form>
 
