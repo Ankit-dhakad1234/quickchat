@@ -1,0 +1,5 @@
+<svg width="280" height="80" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="8" width="64" height="64" rx="20" fill="#8B5CF6"/>
+  <path d="M16 26 h32 a8 8 0 0 1 8 8 v8 a8 8 0 0 1 -8 8 h-16 l-10 8 v-8 h-6 a8 8 0 0 1 -8 -8 v-8 a8 8 0 0 1 8 -8 z" fill="#fff"/>
+  <text x="82" y="52" font-family="Outfit, sans-serif" font-size="34" font-weight="700" fill="#fff">Quick Chat</text>
+</svg>
